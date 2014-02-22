@@ -10,7 +10,7 @@
      }
     cfg))
 
-(defmacro call* [conn rpc params res err & json-args]
+(defmacro ^:private call* [conn rpc params res err & json-args]
   `(let [{res# ~res err# ~err}
          (-> ~conn
              (assoc :body
